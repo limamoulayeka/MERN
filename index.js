@@ -1,10 +1,12 @@
 import express from "express";
+import dotenv from "dotenv";
 import { MongoClient, ServerApiVersion } from "mongodb";
 const app = express();
 const port = 4000;
 
+dotenv.config();
 
-const uri = "mongodb+srv://limamoulayeka:HJ0txlYQwsaCbzAv@nodejs.e55db.mongodb.net/?retryWrites=true&w=majority&appName=nodejs";
+const uri = process.env.STRING_URI;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
